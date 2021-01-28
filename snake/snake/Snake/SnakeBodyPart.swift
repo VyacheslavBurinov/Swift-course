@@ -23,9 +23,9 @@ class SnakeBodyPart: SKShapeNode {
         self.position = point
         
         self.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(diametr - 4), center: CGPoint(x: 5, y: 5))
-        self.physicsBody?.isDinamic = true
+        self.physicsBody?.isDynamic = true
         
-        self.physicsBody?.categoriesBitMask = CollisionCategories.Snake
+        self.physicsBody?.categoryBitMask = CollisionCategories.Snake
         self.physicsBody?.contactTestBitMask = CollisionCategories.EdgeBody | CollisionCategories.Apple
         
         

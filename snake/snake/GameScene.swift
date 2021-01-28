@@ -118,6 +118,7 @@ class GameScene: SKScene {
         self.addChild(apple)
         
     }
+    
 }
 
 extension GameScene: SKPhysicsContactDelegate{
@@ -133,8 +134,9 @@ extension GameScene: SKPhysicsContactDelegate{
             apple?.removeFromParent()
             createApple()
         case CollisionCategories.EdgeBody:
-            print("GameOver")
-            snake?.removeFromParent()
+            snake = nil
+            self.removeAllChildren()
+            break
         default:
             break
         }
